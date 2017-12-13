@@ -8,6 +8,7 @@ if ( process.argv.length < 3) {
 // init Dropbox
 var dbx = new Dropbox({ accessToken: process.argv[2] })
 var numFiles = 0
+var numFolders = 0
 
 // async, returns number of files
 function listFiles(items){
@@ -17,17 +18,19 @@ function listFiles(items){
       // only push files to array
       if(item['.tag'] == 'file') {
         files.push(item.path_lower)
+      } else {
+        numFolders++
       }
     })
     numFiles += files.length
-    console.log(numFiles)
+    console.log("FILES "+numFiles+" / FOLDERS "+numFolders+" / TOTAL "+(numFolders+numFiles))
     // validate if need to call recursively
     if(items.has_more) {
         // retrieve new files from cursor and call
         dbx.filesListFolderContinue({cursor: items.cursor})
          .then((res) => {
            listFiles(res)
-            .then((others) => { resolve(files.concat(others))})
+            .then((others) => { return(files.concat(others))})
             .catch((err) => {
               console.log(err)
               return
@@ -37,7 +40,7 @@ function listFiles(items){
            return
         })
       } else {
-        return numFiles
+        return files
       }
     })
 }
@@ -54,10 +57,9 @@ function compare(a, b) {
 dbx.filesListFolder({path: '', recursive: true})
   .then((res) => {
     listFiles(res).then((items) => {
-      console.log({
-        total: items.length,
-        files: items.sort(compare)
-      })
+      //console.log("TOTAL FILES "+items.length)
+      //console.log("TOTAL FILES "+numFiles)
+      //console.log("TOTAL FOLDERS "+numFolders)
     }).catch((err) => {
       console.log(err)
       return
