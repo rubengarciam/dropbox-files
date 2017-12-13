@@ -1,0 +1,14 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "dropbox": "^2.5.12",
+    "firebase-admin": "~4.2.1",
+    "firebase-functions": "^0.5.7",
+    "promise": "^8.0.1"
+  },
+  "scripts": {
+        "run": "node app.js"
+    },
+  "private": true
+}
