@@ -2,15 +2,32 @@
 
 Lists the number of files for a Dropbox user.
 
-**Using locally**
+### Using locally
+
+**Installation**
+
+Install [node.js](https://nodejs.org).
+
+Clone/download the repo and install its dependencies
 
 ```
-node src/index.js TOKEN
+git clone https://github.com/rubengarciam/dropbox-files.git
+cd dropbox-files
+npm install
 ```
 
-where _TOKEN_ is an access token for the desired Dropbox user
+**Parameters**
 
-**Using as a service**
+```
+node src/index.js TOKEN DEPTH
+```
+
+where:
+
+- _TOKEN_ is an access token for the desired Dropbox user
+- _DEPTH_ is the folder tree depth you'd like to display
+
+### Using as a service
 
 Call:
 
