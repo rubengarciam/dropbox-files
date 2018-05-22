@@ -1,8 +1,6 @@
-# dropbox-files
+# dropbox scripts
 
-Lists the number of files for a Dropbox user.
-
-### Using locally
+This is a collections of scripts for Dropbox.
 
 **Installation**
 
@@ -11,15 +9,19 @@ Install [node.js](https://nodejs.org).
 Clone/download the repo and install its dependencies
 
 ```
-git clone https://github.com/rubengarciam/dropbox-files.git
+git clone https://github.com/rubengarciam/dropbox-scripts.git
 cd dropbox-files
 npm install
 ```
 
+### listFiles
+
+Lists the number of files for a Dropbox user.
+
 **Parameters**
 
 ```
-node src/index.js TOKEN DEPTH
+node src/listFiles.js TOKEN DEPTH
 ```
 
 where:
