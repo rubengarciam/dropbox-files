@@ -25,16 +25,4 @@ node src/index.js TOKEN DEPTH
 where:
 
 - _TOKEN_ is an access token for the desired Dropbox user
-- _DEPTH_ is the folder tree depth you'd like to display
-
-### Using as a service
-
-Call:
-
-```
-https://us-central1-dropbox-files-591ad.cloudfunctions.net/files?token=TOKEN
-```
-
-where _TOKEN_ is an access token for the desired Dropbox user
-
-Not suitable for users with a lot of files, firebase timeouts
+- _DEPTH_ is the folder tree depth you'd like use for aggregating the number of files. Use 0 if you just want to display the total number of files and folders
