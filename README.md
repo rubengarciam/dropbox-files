@@ -2,6 +2,8 @@
 
 This is a collections of scripts for Dropbox.
 
+## Setup
+
 **Installation**
 
 Install [node.js](https://nodejs.org).
@@ -30,6 +32,8 @@ You can find the group id withouth using the _API_ in the _Admin Console_:
 2. Open the desired group that contains the admin
 3. The _url_ should have the following structure: _https://www.dropbox.com/team/admin/groups#/g:XXXXXXXX_
 4. _"g:XXXXXXXX"_ is the _group id_
+
+## Functions
 
 ### listFiles
 
