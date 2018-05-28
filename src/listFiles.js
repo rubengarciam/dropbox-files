@@ -1,13 +1,14 @@
 const Dropbox = require('dropbox')
-const ora = require('ora');
 var Promise = require('promise')
+const ora = require('ora')
+var config = require('./config')
 
-if ( process.argv.length < 3) {
-  console.log("Missing token: node src/index.js  TOKEN depth")
+if ( process.argv.length < 2) {
+  console.log("Missing token: node src/listFiles.js depth")
   return
 }
 // init Dropbox
-var dbx = new Dropbox({ accessToken: process.argv[2] })
+var dbx = new Dropbox({ accessToken: config.TOKEN_USER })
 var numFiles = 0
 var numFolders = 0
 var files = []
@@ -53,7 +54,7 @@ function compare(a, b) {
 
 // function to aggregate the amount of files per specific folder path
 function listFilesFolder(){
-  let depth = process.argv[3]
+  let depth = process.argv[2]
   folders.sort(compare).map((folder) => {
     let folderDepth = folder.split("/").length - 1
     if(!depth || (folderDepth <= depth)){
