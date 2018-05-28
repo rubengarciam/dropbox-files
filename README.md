@@ -22,7 +22,14 @@ You will need to configure _src/config.js_ with the tokens and other ids for you
 - **TOKEN_ADMIN -** : token for performing file actions on behalf of the admin. Must be a _full access_ token
 - **TOKEN_TMFA -** team member file access token
 - **TOKEN_TMM -** team member management token
-- **GROUP_PROJECT_CREATORS -** a group that the admin is part of
+- **GROUP_PROJECT_CREATORS -** a group that the admin is part of. Must be the _group id_
+
+You can find the group id withouth using the _API_ in the _Admin Console_:
+
+1. Go to [https://www.dropbox.com/team/admin/groups](https://www.dropbox.com/team/admin/groups)
+2. Open the desired group that contains the admin
+3. The _url_ should have the following structure: _https://www.dropbox.com/team/admin/groups#/g:XXXXXXXX_
+4. _"g:XXXXXXXX"_ is the _group id_
 
 ### listFiles
 
