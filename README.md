@@ -12,7 +12,7 @@ Clone/download the repo and install its dependencies
 
 ```
 git clone https://github.com/rubengarciam/dropbox-scripts.git
-cd dropbox-files
+cd dropbox-scripts
 npm install
 ```
 
